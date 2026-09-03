@@ -1,18 +1,20 @@
 pipeline {
     agent any
+
     stages {
+
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Dharun-P-B/jenkinsqn3.git'
+                git 'https://github.com/Dharun-P-B/jenkinsqn3.git'
             }
         }
 
-    stage('Build') {
-        steps{
-            bat  'python result.py'
+        stage('Build') {
+            steps {
+                bat '"C:\\Users\\dharu_naut31y\\AppData\\Local\\Python\\bin\\python.exe" result.py'
+            }
         }
     }
-  }
 }
 
     
